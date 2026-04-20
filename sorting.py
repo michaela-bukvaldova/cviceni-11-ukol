@@ -1,12 +1,11 @@
 import random
-import matplotlib.pyplot as plt
 
 def random_numbers(count, low=0, high=100):
     return [random.randint(low, high) for _ in range(count)]
 
 def selection_sort(numbers):
     numbers = numbers[:]
-    for pozice_prochazene in range(pozice_ukladani + 1, len(numbers)):
+    for pozice_ukladani in range(len(numbers)):
         min_idx = pozice_ukladani
         for pozice_prochazene in range(pozice_ukladani + 1, len(numbers)):
             if numbers[pozice_prochazene] < numbers[min_idx]:
@@ -30,11 +29,6 @@ def bubble_sort(numbers):
 
 
 
-        for pozice_prohazene in range(pozice_ukladani + 1, len(numbers)):
-
-
-
-
-numbers = [5, 1, 4, 2, 8]
+numbers = random_numbers(20)
 print("puvodni seznam:", numbers)
-print("novy seznam:", selection_sort(numbers))
+print("novy seznam:", bubble_sort(selection_sort(numbers)))
